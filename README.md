@@ -4,26 +4,40 @@ A simple Python app that lets you speak and see your words transcribed in real-t
 
 ## Quick Start
 
-### 1. Install System Dependencies (Ubuntu)
+⚠️ **IMPORTANT:** Install system dependencies BEFORE Python packages!
+
+### 1. Install System Dependencies (Ubuntu/Debian)
 
 ```bash
 sudo apt update
-sudo apt install -y portaudio19-dev python3-pyaudio
+sudo apt install -y portaudio19-dev python3-dev python3-venv
 ```
 
-### 2. Install Python Dependencies
+**Other distros:** See [INSTALL.md](INSTALL.md) for macOS, Arch, Fedora instructions.
+
+### 2. Create Virtual Environment
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv venv
 ```
 
-Or manually:
+### 3. Install Python Dependencies
 
 ```bash
-pip install SpeechRecognition PyAudio
+./venv/bin/pip install -r requirements.txt
 ```
 
-### 3. Run the App
+**If you get build errors**, you missed step 1! See [INSTALL.md](INSTALL.md) for troubleshooting.
+
+### 4. Run the App
+
+**Web version** (recommended for servers):
+```bash
+./run-web.sh
+# Open http://localhost:5000 in browser
+```
+
+**Desktop version** (requires microphone):
 
 ```bash
 ./run.sh
