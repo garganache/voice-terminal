@@ -1,6 +1,21 @@
-# Voice-to-Text Terminal 🎤
+# Voice-to-Keyboard 🎤⌨️
 
-A simple Python app that lets you speak and see your words transcribed in real-time in the terminal.
+**Speak and your words get typed into your terminal automatically.**
+
+## Two Modes
+
+### 🤖 Daemon Mode (Recommended)
+**Background daemon that types text directly into your terminal**
+- Runs silently in background
+- Types where your cursor is
+- No printing, just pure keyboard simulation
+- See [DAEMON.md](DAEMON.md) for details
+
+### 📺 Terminal Display Mode
+**Interactive app that shows transcriptions**
+- Desktop app: prints to terminal
+- Web app: browser interface
+- See below for details
 
 ## Quick Start
 

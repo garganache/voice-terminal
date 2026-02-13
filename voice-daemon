@@ -1,0 +1,14 @@
+#!/bin/bash
+# Voice Daemon Control Script
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DAEMON="$SCRIPT_DIR/daemon.py"
+VENV="$SCRIPT_DIR/venv"
+
+if [ ! -d "$VENV" ]; then
+    echo "❌ Virtual environment not found at $VENV"
+    echo "Run: python3 -m venv venv && ./venv/bin/pip install -r requirements.txt"
+    exit 1
+fi
+
+"$VENV/bin/python" "$DAEMON" "$@"
