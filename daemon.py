@@ -29,14 +29,15 @@ class VoiceDaemon:
         """Type text using xdotool (simulates keyboard input)"""
         try:
             # Use xdotool to type text into active window
-            subprocess.run(['xdotool', 'type', '--', text], check=True)
+            # Add a space after each phrase for natural dictation
+            subprocess.run(['xdotool', 'type', '--', text + ' '], check=True)
             self.log(f"Typed: {text}")
         except subprocess.CalledProcessError:
             self.log("ERROR: xdotool failed")
         except FileNotFoundError:
             # Try ydotool for Wayland
             try:
-                subprocess.run(['ydotool', 'type', text], check=True)
+                subprocess.run(['ydotool', 'type', text + ' '], check=True)
                 self.log(f"Typed (ydotool): {text}")
             except:
                 self.log("ERROR: Neither xdotool nor ydotool available")
